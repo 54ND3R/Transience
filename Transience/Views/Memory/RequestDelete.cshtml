@@ -1,0 +1,26 @@
+﻿@model Memory
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Are you sure?</h2>
+
+<div class="">
+    @Html.LabelFor(x => x.Id) : @Model.Id
+</div>
+
+<div class="">
+    @Html.LabelFor(x => x.Key) : @Model.Key
+</div>
+
+<div class="">
+    @Html.LabelFor(x => x.Value) : @Model.Value   
+</div>
+
+<div class="">
+    @Html.LabelFor(x => x.Category) : @Model.Category
+</div>
+
+@Html.ActionLink("Confirm","Delete", new { id=Model.Id })
+@Html.ActionLink("Cancel", "Overview")

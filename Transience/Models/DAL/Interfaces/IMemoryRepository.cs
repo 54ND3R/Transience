@@ -11,6 +11,6 @@ namespace Transience.Models.DAL.Interfaces {
         void Insert(Memory newMemory);
         void Delete(int id);
         void Update(Memory modifiedMemory);
-        void Safe();
+        void Save();
     }
 }

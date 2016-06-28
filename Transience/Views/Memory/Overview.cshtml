@@ -6,11 +6,35 @@
 
 <h2>Overview</h2>
 
-@{ 
-    foreach (var mem in Model) {
-        @mem.Key;
-        @mem.Value;
-    }
-}
 
-@Html.ActionLink("New", "New");
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Key</th>
+            <th>Value</th>
+            <th>Category</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            foreach (var mem in Model) {
+                <tr>
+                    <td>@mem.Key</td>
+                    <td>@mem.Value</td>
+                    <td>@mem.Category</td>
+                    @*Actions*@
+                    <td>
+                        @Html.ActionLink("[Edit]", "Change", new { id = mem.Id })
+                        @Html.ActionLink("[Delete]", "RequestDelete", new { id = mem.Id })
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
+<div class="row">
+    @Html.ActionLink("New", "New")
+</div>
+

@@ -1,16 +1,19 @@
 ﻿@model Memory
 
 @{
-    ViewBag.Title = "New";
+    ViewBag.Title = "Change";
 }
 
-<h2>New Memory</h2>
+<h2>Change</h2>
 
-<form action="@Url.Action("Add")" method="post">
-    
+<form action="@Url.Action("Update")" method="post">
+    <div class="form-group">
+        @Html.LabelFor(x => x.Id, new { })
+        @Html.TextBoxFor(x => x.Id, new { @class = "form-control" })
+    </div>
     <div class="form-group">
         @Html.LabelFor(x => x.Key, new { })
-        @Html.TextBoxFor(x => x.Key, new { @class="form-control" })
+        @Html.TextBoxFor(x => x.Key, new { @class = "form-control" })
     </div>
     <div class="form-group">
         @Html.LabelFor(x => x.Value, new { })
@@ -22,9 +25,8 @@
     </div>
 
     <div class="row">
-        <input type="submit" value="Add" />
+        <input type="submit" value="Update" />
     </div>
 
 </form>
-
 

@@ -34,7 +34,7 @@ namespace Transience.Models.DAL.Repositories {
             context.Memories.Add(newMemory);
         }
 
-        public void Safe() {
+        public void Save() {
             context.SaveChanges();
         }
 
