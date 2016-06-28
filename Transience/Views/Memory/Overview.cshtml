@@ -1,7 +1,16 @@
-﻿
+﻿@model IEnumerable<Memory>
+
 @{
-    ViewBag.Title = "Over";
+    ViewBag.Title = "Overview";
 }
 
 <h2>Overview</h2>
 
+@{ 
+    foreach (var mem in Model) {
+        @mem.Key;
+        @mem.Value;
+    }
+}
+
+@Html.ActionLink("New", "New");
