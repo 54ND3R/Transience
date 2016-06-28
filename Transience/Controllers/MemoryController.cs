@@ -22,13 +22,12 @@ namespace Transience.Controllers
             this.rep = rep;
         }
 
-        //Overview
         public ActionResult Overview()
         {
             var mems = rep.Get();
             return View(mems);
         }
-
+        //New
         public ActionResult New() {
             Memory newMemory = new Memory();
             return View(newMemory);
@@ -41,7 +40,7 @@ namespace Transience.Controllers
             }
             return RedirectToAction("Overview");
         }
-
+        //Update
         public ActionResult Change(int? id) {
             if (id.HasValue) {
                 Memory changeMemory = rep.GetById(id.Value);
@@ -57,7 +56,7 @@ namespace Transience.Controllers
             }
             return RedirectToAction("Overview");
         }
-
+        //Delete
         public ActionResult RequestDelete(int? id) {
             if (id.HasValue) {
                 Memory deleteMemory = rep.GetById(id.Value);
