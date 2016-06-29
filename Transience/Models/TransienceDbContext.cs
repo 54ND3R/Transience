@@ -7,6 +7,7 @@ namespace Transience.Models
     public class TransienceDbContext : DbContext
     {
         public virtual DbSet<Memory> Memories { get; set; }
+        public virtual DbSet<Test> Tests { get; set; }
 
         public TransienceDbContext()
             : base("TransienceDb")

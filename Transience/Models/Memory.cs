@@ -9,5 +9,7 @@ namespace Transience.Models {
         public string Key { get; set; }
         public string Value { get; set; }
         public string Category { get; set; }
+        public virtual ICollection<Test> Tests { get; set; }
+
     }
 }
